@@ -1,92 +1,43 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daftar Halaman</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
-      padding: 2rem;
-      max-width: 700px;
-      margin: auto;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #222;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      gap: 1rem;
-    }
-
-    li {
-      background: #fff;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    li:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    a {
-      color: #007acc;
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: block;
-    }
-
-    a span {
-      margin-right: 0.5rem;
-    }
-
-    @media (max-width: 500px) {
-      body {
-        padding: 1rem;
-      }
-
-      li {
-        padding: 1rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonimy Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
+  <nav>
+    <a href="#" class="logo">Anonimy</a>
+    <div class="list show">
+      <a href="#">Projects</a>
+      <a href="#">Articles</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+  </nav>
 
-  <h1>📄 Daftar Halaman HTML</h1>
-  <ul id="link-list"></ul>
+  <section id="hero">
+    <h1>Welcome to My Static Website</h1>
+    <p>Just simple website I made to share my projects.</p>
+    <div class="new">
+      <span class="badge">New</span>
+      <a href="#" class="project">Random Stories</a>
+    </div>
+  </section>
 
-  <script>
-    // Daftar file HTML - update manual
-    const pages = [
-      { title: "Tentang Project", path: "about.html", icon: "📘" },
-      { title: "Dokumentasi", path: "docs/index.html", icon: "📄" },
-      { title: "Demo Halaman", path: "demo.html", icon: "🧪" },
-      { title: "Kontak", path: "contact.html", icon: "✉️" }
-    ];
-
-    const list = document.getElementById("link-list");
-
-    pages.forEach(page => {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = page.path;
-      a.innerHTML = `<span>${page.icon}</span>${page.title}`;
-      li.appendChild(a);
-      list.appendChild(li);
-    });
-  </script>
-
+  <footer>Thank you for visiting my website :)</footer>
 </body>
 </html>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.list');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

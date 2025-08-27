@@ -1,29 +1,143 @@
-body {
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 2rem;
-  max-width: 700px;
-  margin: auto;
-}
-
-h1 {
-  color: #444;
-}
-
-a {
-  color: #007acc;
-  text-decoration: none;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+	cursor: pointer;
 }
 
-ul {
-  margin-top: 1rem;
+body, html {
+	height: 100%;
 }
 
-ul li {
-  margin-bottom: 0.5rem;
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
+	background: black;
+	color: white;
+	flex-shrink: 0;
+}
+
+nav .logo {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: white;
+	z-index: 5;
+}
+
+nav .list {
+	transition: .5s;
+}
+
+nav .list a {
+	color: white;
+	margin-left: 16px;
+}
+
+.menu-toggle {
+	display: none;
+ 	font-size: 1.5rem;
+  	background: none;
+  	border: none;
+  	color: white;
+  	cursor: pointer;
+}
+
+#hero {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	padding: 32px;
+}
+
+#hero * {
+	margin-top: 16px;
+	text-align: center;
+}
+
+.new {
+	margin-top: 16px;
+	background: black;
+	padding: 12px;
+	border-radius: 32px;
+}
+
+.new .badge {
+	background: white;
+	padding: 4px 8px;
+	border-radius: 16px;
+	color: black;
+	font-weight: bold;
+	box-shadow: 
+		0px 0px 8px rgba(255, 255, 255, .4),
+		0px 0px 8px rgba(255, 255, 255, .2);
+	animation: glow 2s infinite ease-in-out;
+}
+
+@keyframes glow {
+	0% {
+		box-shadow: 
+			0px 0px 8px rgba(255, 255, 255, .6),
+			0px 0px 8px rgba(255, 255, 255, .4);
+	}
+	50% {
+		box-shadow: 
+			0px 0px 8px rgba(255, 255, 255, .8),
+			0px 0px 8px rgba(255, 255, 255, .6);
+	}
+	100% {
+		box-shadow:
+			0px 0px 8px rgba(255, 255, 255, .6),
+			0px 0px 8px rgba(255, 255, 255, .4);
+	}
+}
+
+.new .project {
+	color: white;
+/*	font-weight: bold;*/
+}
+
+footer {
+	padding: 16px;
+	background: black;
+	color: white;
+	text-align: center;
+}
+
+@media (max-width: 468px) {
+	.menu-toggle {
+		display: block;
+	}
+
+	nav .list{
+		position: fixed;
+		bottom: -100%;
+		left: 0;
+		right: 0;
+		padding: 32px;
+		background: black;
+		border-radius: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	nav .list.show {
+		bottom: 0;
+	}
 }
