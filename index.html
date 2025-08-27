@@ -5,30 +5,74 @@
   <title>Daftar Halaman</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
       padding: 2rem;
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
+      color: #333;
     }
-    h1 { text-align: center; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 0.5rem 0; }
-    a { color: #007acc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    li {
+      background: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: block;
+    }
+
+    a span {
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 1rem;
+      }
+
+      li {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Daftar Halaman HTML</h1>
+  <h1>📄 Daftar Halaman HTML</h1>
   <ul id="link-list"></ul>
 
   <script>
-    // Daftar file HTML - update ini secara manual saat nambah file baru
+    // Daftar file HTML - update manual
     const pages = [
-      { title: "Tentang Project", path: "about.html" },
-      { title: "Dokumentasi", path: "docs/index.html" },
-      { title: "Demo Halaman", path: "demo.html" },
-      { title: "Kontak", path: "contact.html" }
+      { title: "Tentang Project", path: "about.html", icon: "📘" },
+      { title: "Dokumentasi", path: "docs/index.html", icon: "📄" },
+      { title: "Demo Halaman", path: "demo.html", icon: "🧪" },
+      { title: "Kontak", path: "contact.html", icon: "✉️" }
     ];
 
     const list = document.getElementById("link-list");
@@ -37,7 +81,7 @@
       const li = document.createElement("li");
       const a = document.createElement("a");
       a.href = page.path;
-      a.textContent = page.title;
+      a.innerHTML = `<span>${page.icon}</span>${page.title}`;
       li.appendChild(a);
       list.appendChild(li);
     });
