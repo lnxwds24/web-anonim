@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 	font-family: sans-serif;
 	text-decoration: none;
+	user-select: none;
 }
 
 a:hover {
@@ -65,10 +66,67 @@ nav .list a {
 	padding: 32px;
 }
 
-#hero * {
+#hero .title, .desc, .new {
 	margin-top: 16px;
 	text-align: center;
 }
+
+#hero .articles {
+	width: 100%;
+	height: 100%;
+}
+
+.articles h1 {
+	margin-bottom: 16px;
+}
+
+.articles span {
+	width: 100%;
+}
+
+.articles span .baru {
+/*	color: black;*/
+/*	border: 1px solid black;*/
+	border-radius: 5px;
+/*	padding: 8px;*/
+	font-weight: bold;
+/*	box-shadow: 0 0 8px rgba(0, 0, 0, .4);*/
+	margin-bottom: 16px;
+	min-width: 100%;
+}
+
+.articles .judul {
+	margin-top: 16px;
+	margin-bottom: 8px;
+}
+
+.articles .list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.articles .list a {
+	margin-left: 8px;
+	padding-left: 16px;
+	border-left: 2px solid black;
+	line-height: 1.4em;
+}
+
+.articles .baru span {
+	padding: 4px 8px;
+	background: black;
+	color: white;
+	margin-right: 4px;
+	border-radius: 8px;
+}
+
+
+
+/*#hero * {
+	margin-top: 16px;
+	text-align: center;
+}*/
 
 .new {
 	margin-top: 16px;
@@ -117,6 +175,7 @@ footer {
 	background: black;
 	color: white;
 	text-align: center;
+	font-size: .9em;
 }
 
 @media (max-width: 468px) {
@@ -127,17 +186,18 @@ footer {
 	nav .list{
 		position: fixed;
 		bottom: -100%;
-		left: 0;
-		right: 0;
+		left: 0px;
+		right: 0px;
 		padding: 32px;
 		background: black;
 		border-radius: 16px;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
+		box-shadow: 0 0 16px rgba(0, 0, 0, .8);
 	}
 
 	nav .list.show {
-		bottom: 0;
+		bottom: 0px;
 	}
 }
